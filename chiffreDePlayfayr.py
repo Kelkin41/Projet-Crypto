@@ -46,15 +46,28 @@ def verifListe(liste):
         else:
             liste = [[liste[i + j * 5] for i in range(5)] for j in range(5)]
             AffichageTab(liste)
+            
     else:
         print("La liste n'est pas bonne !")
         liste = input("Liste : ")
         verifListe(liste)
+
+def recupCoord(lettre,liste):
+    i = 0
+    j = 1
+    listeCoord = []
+    for x in range(len(liste)):
+        i += 1
+        if i == 6:
+            i = 1
+            j += 1
+    listeCoord.append([i][j])
+    print(listeCoord)
     
 liste = input("Liste : ")
 verifListe(liste)
-plateau = [["a","b","c","d","e"],["f","g","h","i","j"],["k","l","m","n","o"],["p","q","r","s","t"],["u","v","x","y","z"]]
-
+lettre = input("Lettre : ")
+recupCoord(lettre,liste)
 
 #chaine = input("Chaine : ")
 #tailleChaine(bigramme(remplacerW(chaine)))
